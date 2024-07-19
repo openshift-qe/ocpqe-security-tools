@@ -40,7 +40,7 @@ folders = invoke('ls ' + str(result_folder))[1].split('\n')
 for folder in folders: 
     if folder != "":
         alert_results = get_results(result_folder + "/" +folder)
-        if alert_results['High'] > 0: 
+        if alert_results['High'] > 0:
             result = "Fail"
 
 if result == "Fail": 

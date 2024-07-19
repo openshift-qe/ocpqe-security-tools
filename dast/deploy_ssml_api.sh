@@ -65,7 +65,7 @@ for api_doc in ${API_URL_LIST}; do
   (( counter++ ))
 done
 python find_alert_types.py
-high_alert_status=$($?)
+high_alert_status=$(echo $?)
 echo "high alert return status $high_alert_status"
 if [ $phase != "Succeeded" ]; then
     echo "Pod $rapidast_pod failed. Look at pod logs in archives (results/*/pod_logs.out)"
