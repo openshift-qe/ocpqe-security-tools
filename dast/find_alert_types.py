@@ -45,3 +45,5 @@ for folder in folders:
 
 if result == "Fail": 
     sys.exit(1)
+
+sys.exit(0)
