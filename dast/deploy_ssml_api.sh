@@ -64,8 +64,8 @@ for api_doc in ${API_URL_LIST}; do
   oc delete pvc rapidast-pvc
   (( counter++ ))
 done
-
-high_alert_status=$(python find_alert_types.py)
+python find_alert_types.py
+high_alert_status=$($?)
 echo "high alert return status $high_alert_status"
 if [ $phase != "Succeeded" ]; then
     echo "Pod $rapidast_pod failed. Look at pod logs in archives (results/*/pod_logs.out)"
