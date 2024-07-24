@@ -43,8 +43,8 @@ spec:
         claimName: $PVC
 EOF
 
-kubectl apply -f $TMP_DIR/$RANDOM_NAME
+oc apply -f $TMP_DIR/$RANDOM_NAME
 rm $TMP_DIR/$RANDOM_NAME
-kubectl wait --for=condition=Ready pod/$RANDOM_NAME
-kubectl cp $RANDOM_NAME:/opt/rapidast/results $RESULTS_DIR
-kubectl delete pod $RANDOM_NAME
+oc wait --for=condition=Ready pod/$RANDOM_NAME
+oc cp $RANDOM_NAME:/opt/rapidast/results $RESULTS_DIR
+oc delete pod $RANDOM_NAME
